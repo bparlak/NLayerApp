@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NLayer.Core.Services
 {
-    public interface ICategoryService:IServices<Category>
+    public interface ICategoryService:IService<Category>
     {
         Task<CustomResponseDto<CategoryWithProductsDto>> GetSingleCategoryByIdWithProductsAsync(int categoryId);
     }

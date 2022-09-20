@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NLayer.Core.Services
 {
-    public interface IProductService : IServices<Product>
+    public interface IProductService : IService<Product>
     {
         Task<CustomResponseDto<List<ProductWithCategoryDto>>> ProductWithCategory();
     }
