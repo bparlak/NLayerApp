@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using NLayer.Cashing;
 using NLayer.Core.Repositories;
 using NLayer.Core.Services;
 using NLayer.Core.UnitOfWorks;
@@ -29,7 +30,7 @@ namespace NLayer.API.Modules
 
             builder.RegisterAssemblyTypes(apiAssembly, repoAssembly, serviceAssembly).Where(x => x.Name.EndsWith("Service")).AsImplementedInterfaces().InstancePerDependency();
 
-
+            builder.RegisterType<ProductServiceWithCaching>().As<IProductService>();
             //InstancePerLifetimeScope => Scope
             //InstancePerDependency=> transient - her bir transaction için yeni bir service repository oluşturur
         }
